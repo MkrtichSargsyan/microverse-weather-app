@@ -1,3 +1,5 @@
-import './style.css';
+import "./css/style.css";
+import "./css/customStyles.css";
 
-alert('work')
+
+console.log(process.env.WEATHER_KEY)
