@@ -4,8 +4,8 @@ console.log(process.env.WEATHER_KEY);
 
 const label = document.querySelector('.form-input-label');
 const search = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
 
-console.log(search);
 search.addEventListener('input', (event) => {
   label.classList.add('label-over-input')
   if (search.value.length>0){
@@ -16,11 +16,14 @@ search.addEventListener('input', (event) => {
     label.classList.add('label-inside-input')
     label.classList.remove('label-over-input')
   }
-
 });
 
 
-const searchButton = document.getElementById("search-button");
+searchButton.addEventListener('click',(e)=>{
+  e.preventDefault();
+  console.dir(search.value);
+  document.getElementsByTagName("form")[0].reset();
+  label.classList.add('label-inside-input')
+  label.classList.remove('label-over-input')
+})
 
-
-searchButton.addEventListener
