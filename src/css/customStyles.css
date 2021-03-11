@@ -6,6 +6,7 @@
 
 body {
   color: #033549;
+  font-family: "Open Sans Condensed", sans-serif;
   width: 100%;
   max-width: 1800px;
   margin: 0 auto;
@@ -67,14 +68,14 @@ p {
 
 .form-input {
   background: none;
-  color: white;
+  color: #033549;
   font-size: 18px;
   padding: 15px 10px 2px 5px;
   display: block;
   width: 100%;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #033549;
 }
 .form-input:focus{
   outline: none;
@@ -83,7 +84,7 @@ p {
 .form-input:focus ~ .form-input-label{
   top: -10px;
   font-size: 12px;
-  color: black;
+  color: #033549;
 }
 
 .form-input-label {
