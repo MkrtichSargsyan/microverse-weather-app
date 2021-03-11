@@ -4,23 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   <script defer src="main.js"></script></head>
-  <body class="bg-blue-200">
+  <body>
     <header
-      class="shadow-md flex justify-between items-center bg-blue-400 py-4 mb-4"
+      class="bg-green-200 bg-opacity-25 shadow-2xl flex justify-between items-center py-4 mb-4"
     >
-      <h1 class="text-4xl w-1/4 flex justify-center">London</h1>
+      <h1
+        class="italic font-mono text-4xl w-1/4 flex justify-center font-semibold"
+      >
+        Yerevan
+      </h1>
 
       <form
-        class="flex border-l-2 border-r-2 border-black px-24 flex-1 justify-center items-center"
+        class="flex border-l-2 border-r-2 border-gray-500 px-24 flex-1 justify-center items-center"
       >
         <div class="group flex flex-col w-full">
-          <input type="text" class="form-input mb-5" />
-          <label class="form-input-label"> Enter city name </label>
+          <input id='search-input' type="text" class="form-input mb-5" />
+          <label class="form-input-label label-inside-input"> Enter city name </label>
         </div>
 
-        <button type="submit" class="border border-black ml-4 w-3/5 p-2">
+        <button id='search-button' type="submit" class="border rounded-lg font-semibold border-gray-500 ml-4 w-11/12 md:w-3/5 p-2">
           Check the weather
         </button>
       </form>
@@ -36,43 +44,50 @@
       </div>
     </header>
     <main class="flex available-height">
-      <section class="w-2/3 border-black border">
-        <p>
-          <span>Today</span>
-          <span>date of calendar</span>
+      <section
+        class="flex flex-col justify-between items-center bg-green-200 bg-opacity-40 shadow-2xl w-2/3"
+      >
+        <p
+          class="w-5/6 mx-auto border-b-2 border-gray-500 flex justify-between items-end text-xl p-2 font-medium"
+        >
+          <span class="text-4xl">Today</span>
+          <span>May 26, 2020</span>
         </p>
+        <div class="p-4 text-7xl font-serif">20C</div>
         <div>
-          20C
-        </div>
-        <div>
-          <img src="" alt="">
+          <div class="w-24 h-24 border-2 border-gray-500"></div>
+          <img src="" alt="" />
         </div>
 
-        <p>broken clouds</p>
-        <div>
-          <div class="min-max">
-            <div class="min">
-                <span>Min</span>
-                <span>18C</span>
+        <p class="my-4 text-3xl font-thin">broken clouds</p>
+
+        <div class="flex justify-between items-center w-4/6 mb-8">
+          <div class="min-max flex-1">
+            <div class="min flex flex-col items-center mb-4">
+              <span>Min</span>
+              <span class="text-3xl font-mono">18C</span>
             </div>
-            <div class="max">
+            <div class="max flex flex-col items-center">
               <span>Max</span>
-              <span>18C</span>
-          </div>
-          </div>
-          <div class="sunrise-sunset">
-            <div class="sunrise">
-              <span>4.54 AM</span>
+              <span class="text-3xl font-mono">18C</span>
             </div>
-            <div class="sunset">
-              <span>4.54 AM</span>
+          </div>
+
+          <div class="border-gray-500 border h-4/6"></div>
+
+          <div class="sunrise-sunset flex-1">
+            <div class="sunrise flex flex-col items-center mb-4">
+              <span>Sunrise</span>
+              <span class="text-3xl font-mono">4.54 AM</span>
+            </div>
+            <div class="sunset flex flex-col items-center">
+              <span>Sunset</span>
+              <span class="text-3xl font-mono">4.54 AM</span>
             </div>
           </div>
         </div>
       </section>
-      <aside class="border border-black ml-4 w-1/3">
-
-      </aside>
+      <aside class="bg-green-200 bg-opacity-25 shadow-2xl ml-4 w-1/3"></aside>
     </main>
 
     <script src="index.js" defer></script>
