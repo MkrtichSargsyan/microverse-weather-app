@@ -6,15 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   <script defer src="main.js"></script></head>
-  <body>
-    <header class="border border-black h-4 ">
-      <h1>London</h1>
-      <div>
-        <input type="text">
-        <label for=""></label>
+  <body class="bg-blue-200">
+    <header
+      class="shadow-md flex justify-between items-center bg-blue-400 py-4 mb-4"
+    >
+      <h1 class="text-4xl w-1/4 flex justify-center">London</h1>
+
+      <form
+        class="flex border-l-2 border-r-2 border-black px-24 flex-1 justify-center items-center"
+      >
+        <div class="group flex flex-col w-full">
+          <input type="text" class="form-input mb-5" />
+          <label class="form-input-label"> Enter city name </label>
+        </div>
+
+        <button type="submit" class="border border-black ml-4 w-3/5 p-2">
+          Check the weather
+        </button>
+      </form>
+
+      <div class="flex w-1/6 justify-center">
+        <input type="checkbox" id="switch" class="checkbox" />
+        <label for="switch" class="toggle">
+          <p class="flex justify-between items-center h-full px-4">
+            <span>°F</span>
+            <span>°C</span>
+          </p>
+        </label>
       </div>
     </header>
-    <main></main>
+    <main class="flex available-height">
+      <section class="w-2/3 border-black border">
+        <p>
+          <span>Today</span>
+          <span>date of calendar</span>
+        </p>
+        <div>
+          20C
+        </div>
+        <div>
+          <img src="" alt="">
+        </div>
+
+        <p>broken clouds</p>
+        <div>
+          <div class="min-max">
+            <div class="min">
+                <span>Min</span>
+                <span>18C</span>
+            </div>
+            <div class="max">
+              <span>Max</span>
+              <span>18C</span>
+          </div>
+          </div>
+          <div class="sunrise-sunset">
+            <div class="sunrise">
+              <span>4.54 AM</span>
+            </div>
+            <div class="sunset">
+              <span>4.54 AM</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <aside class="border border-black ml-4 w-1/3">
+
+      </aside>
+    </main>
 
     <script src="index.js" defer></script>
   </body>
