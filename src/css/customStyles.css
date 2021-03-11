@@ -1,5 +1,94 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* toggle in label designing */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  background-color: rgb(0, 89, 255);
+  border-radius: 30px;
+  border: 2px solid gray;
+}
+
+/* After slide changes */
+.toggle:after {
+  content: "";
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  background-color: gray;
+  top: 1px;
+  left: 1px;
+  transition: all 0.5s;
+}
+
+/* Toggle text */
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+/* Checkbox cheked effect */
+.checkbox:checked + .toggle::after {
+  left: 62px;
+}
+
+/* Checkbox cheked toggle label bg color */
+.checkbox:checked + .toggle {
+  background-color: green;
+}
+
+.checkbox {
+  display: none;
+}
+
+/* ddddddddddddd */
+
+.group {
+  position: relative;
+}
+
+.form-input {
+  background: none;
+  color: white;
+  font-size: 18px;
+  padding: 15px 10px 2px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+}
+.form-input:focus{
+  outline: none;
+}
+
+.form-input:focus ~ .form-input-label{
+  top: -10px;
+  font-size: 12px;
+  color: black;
+}
+
+.form-input-label {
+  color: gray;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 11px;
+  transition: 300ms ease all;
 }

@@ -9,26 +9,23 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Weather app",
+      template: "./src/index.html",
+    }),
+    new Dotenv(),
+  ],
+
   module: {
     rules: [
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader", "postcss-loader"],
       },
-      {
-        test: /\.(html)$/,
-        use: {
-          loader: "html-loader",
-        },
-      },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: "Weather app",
-    }),
-    new Dotenv(),
-  ],
 
   devServer: {
     watchContentBase: true,

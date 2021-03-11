@@ -6,9 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
-    <header>
-      
+  <body class="bg-blue-200">
+    <header
+      class="shadow-md flex justify-between items-center bg-blue-400 py-4"
+    >
+      <h1 class="text-4xl w-1/4 flex justify-center">London</h1>
+
+      <form
+        class="flex border-l-2 border-r-2 border-black px-24 flex-1 justify-center items-center"
+      >
+        <div class="group flex flex-col w-full">
+          <input type="text" class="form-input mb-5" />
+          <label class="form-input-label"> Enter city name </label>
+        </div>
+
+        <button type="submit" class="border border-black ml-4 w-3/5 p-2">
+          Check the weather
+        </button>
+      </form>
+
+      <div class="flex w-1/6 justify-center">
+        <input type="checkbox" id="switch" class="checkbox" />
+        <label for="switch" class="toggle">
+          <p class="flex justify-between items-center h-full px-4">
+            <span>°F</span>
+            <span>°C</span>
+          </p>
+        </label>
+      </div>
     </header>
     <main></main>
 
