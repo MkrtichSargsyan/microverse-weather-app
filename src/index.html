@@ -24,11 +24,11 @@
         class="flex border-l-2 border-r-2 border-gray-500 px-24 flex-1 justify-center items-center"
       >
         <div class="group flex flex-col w-full">
-          <input type="text" class="form-input mb-5" />
-          <label class="form-input-label"> Enter city name </label>
+          <input id='search-input' type="text" class="form-input mb-5" />
+          <label class="form-input-label label-inside-input"> Enter city name </label>
         </div>
 
-        <button type="submit" class="border border-gray-500 ml-4 w-3/5 p-2">
+        <button id='search-button' type="submit" class="border rounded-lg font-semibold border-gray-500 ml-4 w-2/5 p-2">
           Check the weather
         </button>
       </form>
@@ -61,9 +61,7 @@
 
         <p class="my-4 text-3xl font-thin">broken clouds</p>
 
-        <div
-          class="flex justify-between items-center h-full w-4/6 mb-8"
-        >
+        <div class="flex justify-between items-center w-4/6 mb-8">
           <div class="min-max flex-1">
             <div class="min flex flex-col items-center mb-4">
               <span>Min</span>

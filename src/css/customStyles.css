@@ -87,14 +87,22 @@ p {
   color: #033549;
 }
 
-.form-input-label {
+.label-over-input{
+  top: -10px;
+  font-size: 12px;
+  color: #033549;
+}
+.label-inside-input{
+  top: 11px;
   color: gray;
   font-size: 16px;
+}
+
+.form-input-label {
   font-weight: normal;
   position: absolute;
   pointer-events: none;
   left: 5px;
-  top: 11px;
   transition: 300ms ease all;
 }
 
