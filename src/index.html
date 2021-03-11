@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body class="bg-blue-200">
+  <body>
     <header
-      class="shadow-md flex justify-between items-center bg-blue-400 py-4"
+      class="bg-green-200 bg-opacity-25 shadow-md flex justify-between items-center py-4 mb-4"
     >
       <h1 class="text-4xl w-1/4 flex justify-center">London</h1>
 
@@ -35,7 +35,45 @@
         </label>
       </div>
     </header>
-    <main></main>
+    <main class="flex available-height">
+      <section class="w-2/3 border-black border">
+        <p>
+          <span>Today</span>
+          <span>date of calendar</span>
+        </p>
+        <div>
+          20C
+        </div>
+        <div>
+          <img src="" alt="">
+        </div>
+
+        <p>broken clouds</p>
+        <div>
+          <div class="min-max">
+            <div class="min">
+                <span>Min</span>
+                <span>18C</span>
+            </div>
+            <div class="max">
+              <span>Max</span>
+              <span>18C</span>
+          </div>
+          </div>
+          <div class="sunrise-sunset">
+            <div class="sunrise">
+              <span>4.54 AM</span>
+            </div>
+            <div class="sunset">
+              <span>4.54 AM</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <aside class="border border-black ml-4 w-1/3">
+
+      </aside>
+    </main>
 
     <script src="index.js" defer></script>
   </body>

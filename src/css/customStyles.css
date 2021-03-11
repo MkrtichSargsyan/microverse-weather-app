@@ -5,10 +5,14 @@
 }
 
 body {
+  color: #033549;
   width: 100%;
   max-width: 1800px;
   margin: 0 auto;
   padding: 20px;
+  background-image: url('../images/sky.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 /* toggle in label designing */
@@ -91,4 +95,8 @@ p {
   left: 5px;
   top: 11px;
   transition: 300ms ease all;
+}
+
+.available-height{
+  height: calc(100vh - 150px);
 }
