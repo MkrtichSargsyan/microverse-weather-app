@@ -6,7 +6,6 @@ import {
   fetchWeatherDataByCityName,
   fetchWeatherDataByLocation,
 } from "./weatherApi";
-import { initMap } from "./map";
 
 const label = document.querySelector(".form-input-label");
 const search = document.getElementById("search-input");
