@@ -1,4 +1,4 @@
-const base = "http://api.openweathermap.org/data/2.5/weather";
+const base = "https://api.openweathermap.org/data/2.5/weather";
 
 const fetchWeatherDataByCityName = async (cityName) => {
   const api = `${base}?q=${
