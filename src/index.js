@@ -35,7 +35,6 @@ document.getElementById("today").innerText = new Date()
 document.getElementById("weed-day").innerText = getDayOfWeek();
 
 const mapContainer = document.getElementsByTagName('aside')[0]
-// initMap(mapContainer)
 // default
 
 window.onload = () => {
