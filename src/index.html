@@ -16,6 +16,7 @@
     >
       <h1
         class="italic font-mono text-4xl w-1/4 flex justify-center font-semibold"
+        style="text-transform: capitalize"
       >
         Yerevan
       </h1>
@@ -24,11 +25,17 @@
         class="flex border-l-2 border-r-2 border-gray-500 px-24 flex-1 justify-center items-center"
       >
         <div class="group flex flex-col w-full">
-          <input id='search-input' type="text" class="form-input mb-5" />
-          <label class="form-input-label label-inside-input"> Enter city name </label>
+          <input id="search-input" type="text" class="form-input mb-5" />
+          <label class="form-input-label label-inside-input">
+            Enter city name
+          </label>
         </div>
 
-        <button id='search-button' type="submit" class="border rounded-lg font-semibold border-gray-500 ml-4 w-11/12 md:w-3/5 p-2">
+        <button
+          id="search-button"
+          type="submit"
+          class="border rounded-lg font-semibold border-gray-500 ml-4 w-11/12 md:w-3/5 p-2"
+        >
           Check the weather
         </button>
       </form>
@@ -50,10 +57,10 @@
         <p
           class="w-5/6 mx-auto border-b-2 border-gray-500 flex justify-between items-end text-xl p-2 font-medium"
         >
-          <span class="text-4xl">Today</span>
-          <span id='today'></span>
+          <span id = 'weed-day' class="text-4xl"></span>
+          <span id="today"></span>
         </p>
-        <div id='temp' class="p-4 pb-0 text-7xl font-serif"></div>
+        <div id="temp" class="p-4 pb-0 text-7xl font-serif"></div>
         <div id="weather-icon"></div>
 
         <p id="description" class="mb-4 text-3xl font-thin"></p>
@@ -75,11 +82,11 @@
           <div class="flex-1">
             <div class="flex flex-col items-center mb-4">
               <span>Sunrise</span>
-              <span id='sunrise' class="text-3xl font-mono">4.54 AM</span>
+              <span id="sunrise" class="text-3xl font-mono"></span>
             </div>
             <div class="flex flex-col items-center">
               <span>Sunset</span>
-              <span id="sunset" class="text-3xl font-mono">4.54 AM</span>
+              <span id="sunset" class="text-3xl font-mono"></span>
             </div>
           </div>
         </div>

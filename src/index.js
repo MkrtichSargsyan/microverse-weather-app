@@ -1,7 +1,11 @@
 import "./css/style.css";
 import "./css/customStyles.css";
 
-import fetchWeatherData from "./weather";
+import { getDayOfWeek, renderData } from "./utils";
+import {
+  fetchWeatherDataByCityName,
+  fetchWeatherDataByLocation,
+} from "./weatherApi";
 
 const label = document.querySelector(".form-input-label");
 const search = document.getElementById("search-input");
@@ -17,6 +21,7 @@ const sunrise = document.getElementById("sunrise");
 const sunset = document.getElementById("sunset");
 
 const icon = document.createElement("img");
+icon.classList.add("icon-size");
 const weatherIcon = document.getElementById("weather-icon");
 weatherIcon.appendChild(icon);
 
@@ -26,7 +31,39 @@ document.getElementById("today").innerText = new Date()
   .splice(1, 3)
   .join(" ");
 
-search.addEventListener("input", (event) => {
+document.getElementById("weed-day").innerText = getDayOfWeek();
+
+// default
+
+window.onload = () => {
+  (() => {
+    const locationAllowed = async (position) => {
+      fetchWeatherDataByLocation(
+        position.coords.latitude,
+        position.coords.longitude
+      ).then((weather) => {
+        renderData(weather, temp, icon, description, min, max, sunrise, sunset);
+      });
+    };
+
+    const locationNotAllowed = async () => {
+      fetchWeatherDataByLocation("40.1872", "44.5152").then((weather) => {
+        renderData(weather, temp, icon, description, min, max, sunrise, sunset);
+      });
+    };
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        locationAllowed,
+        locationNotAllowed
+      );
+    } else {
+      alert("Error: Your browser doesn't support geolocation.");
+    }
+  })();
+};
+
+search.addEventListener("input", () => {
   label.classList.add("label-over-input");
   if (search.value.length > 0) {
     label.classList.add("label-over-input");
@@ -45,24 +82,7 @@ searchButton.addEventListener("click", (e) => {
   label.classList.add("label-inside-input");
   label.classList.remove("label-over-input");
 
-  fetchWeatherData(city).then((weather) => {
-    temp.innerText = weather.temp + "°C";
-    icon.src = `http://openweathermap.org/img/w/${weather.icon}.png`;
-    icon.classList.add("icon-size");
-    description.innerText = weather.description;
-    min.innerText = weather.temp_min + "°C";
-    max.innerText = weather.temp_max + "°C";
-
-    sunrise.innerText = new Date(weather.sunrise * 1000).toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-
-    sunset.innerText = new Date(weather.sunset * 1000).toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-
-    console.log(weather);
+  fetchWeatherDataByCityName(city).then((weather) => {
+    renderData(weather, temp, icon, description, min, max, sunrise, sunset);
   });
 });
