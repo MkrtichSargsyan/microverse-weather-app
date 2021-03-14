@@ -2,10 +2,10 @@ import "./css/style.css";
 import "./css/customStyles.css";
 
 import { getDayOfWeek, renderData } from "./utils";
-import {
-  fetchWeatherDataByCityName,
-  fetchWeatherDataByLocation,
-} from "./weatherApi";
+import { fetchWeatherDataByCityName } from "./weatherApi";
+import { fetchGiphy } from "./giphyApi";
+
+const gifContainer = document.getElementById('gif-container')
 
 const label = document.querySelector(".form-input-label");
 const search = document.getElementById("search-input");
@@ -33,35 +33,13 @@ document.getElementById("today").innerText = new Date()
 
 document.getElementById("weed-day").innerText = getDayOfWeek();
 
-const mapContainer = document.getElementsByTagName('aside')[0]
-// default
-
 window.onload = () => {
-  (() => {
-    const locationAllowed = async (position) => {
-      fetchWeatherDataByLocation(
-        position.coords.latitude,
-        position.coords.longitude
-      ).then((weather) => {
-        renderData(weather, temp, icon, description, min, max, sunrise, sunset);
-      });
-    };
-
-    const locationNotAllowed = async () => {
-      fetchWeatherDataByLocation("40.1872", "44.5152").then((weather) => {
-        renderData(weather, temp, icon, description, min, max, sunrise, sunset);
-      });
-    };
-
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        locationAllowed,
-        locationNotAllowed
-      );
-    } else {
-      alert("Error: Your browser doesn't support geolocation.");
-    }
-  })();
+  fetchWeatherDataByCityName("Yerevan").then((weather) => {
+    renderData(weather, temp, icon, description, min, max, sunrise, sunset);
+    fetchGiphy(weather.description).then(url=>{
+      gifContainer.setAttribute('src',`https://media.giphy.com/media/${url}/giphy.gif`)
+    });
+  });
 };
 
 search.addEventListener("input", () => {
@@ -85,5 +63,8 @@ searchButton.addEventListener("click", (e) => {
 
   fetchWeatherDataByCityName(city).then((weather) => {
     renderData(weather, temp, icon, description, min, max, sunrise, sunset);
+    fetchGiphy(weather.description).then(url=>{
+      gifContainer.setAttribute('src',`https://media.giphy.com/media/${url}/giphy.gif`)
+    });
   });
 });
