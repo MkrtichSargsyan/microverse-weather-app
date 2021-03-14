@@ -5,7 +5,7 @@ import { getDayOfWeek, renderData } from "./utils";
 import { fetchWeatherDataByCityName } from "./weatherApi";
 import { fetchGiphy } from "./giphyApi";
 
-const gifContainer = document.getElementById('gif-container')
+const gifContainer = document.getElementById("gif-container");
 
 const label = document.querySelector(".form-input-label");
 const search = document.getElementById("search-input");
@@ -25,6 +25,8 @@ icon.classList.add("icon-size");
 const weatherIcon = document.getElementById("weather-icon");
 weatherIcon.appendChild(icon);
 
+let toggle = document.getElementsByClassName("toggle")[0];
+
 document.getElementById("today").innerText = new Date()
   .toString()
   .split(" ")
@@ -33,11 +35,19 @@ document.getElementById("today").innerText = new Date()
 
 document.getElementById("weed-day").innerText = getDayOfWeek();
 
+// --------------------
+
+let type = "°C";
+let currentCity ='Yerevan';
+
 window.onload = () => {
   fetchWeatherDataByCityName("Yerevan").then((weather) => {
-    renderData(weather, temp, icon, description, min, max, sunrise, sunset);
-    fetchGiphy(weather.description).then(url=>{
-      gifContainer.setAttribute('src',`https://media.giphy.com/media/${url}/giphy.gif`)
+    renderData(type,weather, temp, icon, description, min, max, sunrise, sunset);
+    fetchGiphy(weather.description).then((url) => {
+      gifContainer.setAttribute(
+        "src",
+        `https://media.giphy.com/media/${url}/giphy.gif`
+      );
     });
   });
 };
@@ -56,15 +66,28 @@ search.addEventListener("input", () => {
 searchButton.addEventListener("click", (e) => {
   e.preventDefault();
   const city = search.value;
+  currentCity = city
   countryName.innerText = city;
   document.getElementsByTagName("form")[0].reset();
   label.classList.add("label-inside-input");
   label.classList.remove("label-over-input");
 
   fetchWeatherDataByCityName(city).then((weather) => {
-    renderData(weather, temp, icon, description, min, max, sunrise, sunset);
-    fetchGiphy(weather.description).then(url=>{
-      gifContainer.setAttribute('src',`https://media.giphy.com/media/${url}/giphy.gif`)
+    renderData(type,weather, temp, icon, description, min, max, sunrise, sunset);
+    fetchGiphy(weather.description).then((url) => {
+      gifContainer.setAttribute(
+        "src",
+        `https://media.giphy.com/media/${url}/giphy.gif`
+      );
     });
   });
+});
+
+toggle.addEventListener("click", (e) => {
+  type = type == "°C" ? "°F" : "°C";
+
+  fetchWeatherDataByCityName(currentCity).then((weather) => {
+    renderData(type,weather, temp, icon, description, min, max, sunrise, sunset);
+  });
+ 
 });
