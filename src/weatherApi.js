@@ -1,12 +1,14 @@
-const base = "https://api.openweathermap.org/data/2.5/weather";
+/* eslint-disable no-useless-catch */
 
-const fetchWeatherDataByCityName = async (cityName) => {
+const base = 'https://api.openweathermap.org/data/2.5/weather';
+
+export default async (cityName) => {
   const api = `${base}?q=${
     cityName.charAt(0).toUpperCase() + cityName.slice(1)
   }&appid=${process.env.WEATHER_KEY}&units=metric`;
 
   try {
-    const responce = await fetch(api, { mode: "cors" });
+    const responce = await fetch(api, { mode: 'cors' });
     const data = await responce.json();
 
     return {
@@ -24,5 +26,3 @@ const fetchWeatherDataByCityName = async (cityName) => {
     throw error;
   }
 };
-
-export { fetchWeatherDataByCityName };

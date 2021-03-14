@@ -1,11 +1,13 @@
-const base = "https://api.giphy.com/v1/gifs/translate?api_key=";
+/* eslint-disable no-useless-catch */
 
-const fetchGiphy = async (description) => {
-  const key = "HgAseIIRrXln6uCLLhRU4MkLEZjeYegJ";
+const base = 'https://api.giphy.com/v1/gifs/translate?api_key=';
+
+export default async (description) => {
+  const key = 'HgAseIIRrXln6uCLLhRU4MkLEZjeYegJ';
 
   const api = `${base}${key}&s=${description}`;
   try {
-    const responce = await fetch(api, { mode: "cors" });
+    const responce = await fetch(api, { mode: 'cors' });
     const data = await responce.json();
     const url = await data.data.id;
 
@@ -14,5 +16,3 @@ const fetchGiphy = async (description) => {
     throw error;
   }
 };
-
-export { fetchGiphy };
