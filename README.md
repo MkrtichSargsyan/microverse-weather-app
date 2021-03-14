@@ -1,9 +1,8 @@
 In this project I built a Weather app with javascript and webpack. with the use of openweather API.
 
 ## Desktop
-![screenshot](https://user-images.githubusercontent.com/31889642/107457569-bc508b80-6b6b-11eb-9892-01246b5f7213.png)
 
-![screenshot](https://user-images.githubusercontent.com/31889642/107457573-beb2e580-6b6b-11eb-83c3-6908a2d4b570.png)
+![cc](https://user-images.githubusercontent.com/31889642/111079530-d1765c80-8513-11eb-9083-c1ed69c18b65.png)
 
 ## Built With
 
