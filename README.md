@@ -16,7 +16,7 @@ In this project I built a Weather app with javascript and webpack. with the use 
 
 ## Live Demo
 
-<a href= "https://mkrtichsargsyan.github.io/Restaurant-Page/" target="_blank">Live version</a>
+<a href= "https://mkrtichsargsyan.github.io/microverse-weather-app/" target="_blank">Live version</a>
 
 ## Getting Started
 
