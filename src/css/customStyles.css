@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #033549;
+  font-family: "Open Sans Condensed", sans-serif;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-image: url('../images/sky.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* toggle in label designing */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  background-color: rgb(0, 89, 255);
+  border-radius: 30px;
+  border: 2px solid gray;
+}
+
+/* After slide changes */
+.toggle::after {
+  content: "";
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  background-color: gray;
+  top: 1px;
+  left: 1px;
+  transition: all 0.5s;
+}
+
+/* Toggle text */
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+/* Checkbox cheked effect */
+.checkbox:checked + .toggle::after {
+  left: 62px;
+}
+
+/* Checkbox cheked toggle label bg color */
+.checkbox:checked + .toggle {
+  background-color: green;
+}
+
+.checkbox {
+  display: none;
+}
+
+.group {
+  position: relative;
+}
+
+.form-input {
+  background: none;
+  color: #033549;
+  font-size: 18px;
+  padding: 15px 10px 2px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #033549;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.label-over-input {
+  top: -10px;
+  font-size: 12px;
+  color: #033549;
+}
+
+.form-input-label {
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  transition: 300ms ease all;
+}
+
+.form-input:focus ~ .form-input-label {
+  top: -10px;
+  font-size: 12px;
+  color: #033549;
+}
+
+.label-inside-input {
+  top: 11px;
+  color: gray;
+  font-size: 16px;
+}
+
+.available-height {
+  height: calc(100vh - 160px);
+}
+
+.icon-size {
+  width: 120px;
+  height: 120px;
+}
